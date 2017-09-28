@@ -11,6 +11,6 @@ class MiddlewareController @Inject()()(implicit val executionContext: ExecutionC
 
   def health: ApplicationStatus = ApplicationStatus(status = true, name = "$name;format="norm,word"$")
 
-  def info: ApplicationInformation = ApplicationInformation(version = "$version;format="norm,word"$", name = "$name;format="norm,word"$")
+  def info: ApplicationInformation = ApplicationInformation(version = "$version$", name = "$name;format="normalize"$")
 
 }

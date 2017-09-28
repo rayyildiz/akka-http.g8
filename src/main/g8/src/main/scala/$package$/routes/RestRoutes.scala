@@ -4,8 +4,8 @@ import javax.inject.{Inject, Singleton}
 
 import akka.http.scaladsl.server.Directives._
 import akka.http.scaladsl.server.Route
-import com.rayyildiz.sentiment_analyzer.controllers.{ApplicationController}
-import com.rayyildiz.sentiment_analyzer.models._
+import $package$.controllers.{ApplicationController}
+import $package$.models._
 
 @Singleton
 class RestRoutes @Inject()(
@@ -26,6 +26,6 @@ class RestRoutes @Inject()(
             complete(testController.clean(entity.text))
           }
         }
-      } 
+      }
     } */
 }

@@ -23,7 +23,7 @@ object $name;format="Camel"$Application extends App {
 
   implicit val system: ActorSystem = injector.getInstance(classOf[ActorSystem])
   implicit val executionContext: ExecutionContext = injector.getInstance(classOf[ExecutionContext])
-  // injector.getInstance(classOf[ExecutionContext])
+
   implicit val materializer: ActorMaterializer = injector.getInstance(classOf[ActorMaterializer])
   implicit val dispatcher = system.dispatcher
 
@@ -37,9 +37,9 @@ object $name;format="Camel"$Application extends App {
 
   bindingFuture.onComplete {
     case Success(_) =>
-      logger.info(s"Server online at http://hostAddress:port/")
+      logger.info(s"Server online at http://\$hostAddress:\$port/")
     case Failure(e) =>
-      logger.error(e, s"Failed to open akak-http on http://hostAddress:port/")
+      logger.error(e, s"Failed to open akak-http on http://\$hostAddress:\$port/")
       system.terminate()
   }
   // restServer.startServer(host, port)

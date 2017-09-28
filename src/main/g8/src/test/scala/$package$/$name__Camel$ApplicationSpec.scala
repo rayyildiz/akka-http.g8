@@ -19,7 +19,7 @@ class $name;format="Camel"$ApplicationSpec
     with BeforeAndAfterAll
     with Matchers
     with JsonSerialization {
-  BootApplication.main(Array())
+  $name;format="Camel"$Application.main(Array())
 
   implicit val system = $name;format="Camel"$Application.system
 

@@ -6,9 +6,9 @@ import sbtassembly.PathList
 
 object Settings {
   lazy val settings = Seq(
-    organization    := "$organization;format="norm"$",
-    version         := "$version$",
-    scalaVersion    := "$scala_version$",
+    organization      := "$organization;format="norm"$",
+    version           := "$version$",
+    scalaVersion      := "$scala_version$",
     publishMavenStyle := true,
     publishArtifact in Test := false,
     assemblyMergeStrategy in assembly := {
@@ -34,9 +34,6 @@ object Settings {
         url("http://github.com/$github_user;format="norm"$/$name;format="lower,hyphen"$"),
         "scm:git:git@github.com:$github_user;format="norm"$/$name;format="lower,hyphen"$.git"
       )
-    ),
-    developers := List(
-      Developer(id = "$github_user;format="norm"$", name = "$github_user;format="norm"$", email = "", url = url(""))
     )
   )
 
@@ -46,7 +43,7 @@ object Settings {
     test in assembly := {}
   )
 
-  lazy val $name;format="norm,word"$Settings = Seq(
-    name := "$name;format="lower,hyphen"$"
+  lazy val $name;format="camel"$Settings = Seq(
+    name := "$name;format="normalize"$"
   )
 }
