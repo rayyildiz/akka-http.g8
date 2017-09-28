@@ -1,6 +1,6 @@
-scalaVersion := "$scala_version;format="norm"$"
+scalaVersion := "$scala_version$"
 
-lazy val seentimentalAnalysis = (project in file(".")).
+lazy val $name;format="norm,word"$Analysis = (project in file(".")).
   settings(Settings.settings: _*).
   settings(Settings.publishSettings: _*).
   settings(Settings.testSettings: _*).

@@ -6,13 +6,13 @@ import akka.http.scaladsl.Http
 import akka.http.scaladsl.server.Route
 import akka.stream.ActorMaterializer
 import com.google.inject.Guice
-import com.rayyildiz.sentiment_analyzer.modules.{AkkaModule, ConfigModule}
+import $package$.modules.{AkkaModule, ConfigModule}
 
 import scala.concurrent.ExecutionContext
 import scala.util.{Failure, Success}
 
 
-object $name__Camel$ApplicationSpec extends App {
+object $name;format="Camel"$Application extends App {
   val hostAddress = "localhost"
   val port = 8080
 
@@ -37,9 +37,9 @@ object $name__Camel$ApplicationSpec extends App {
 
   bindingFuture.onComplete {
     case Success(_) =>
-      logger.info(s"Server online at http://$hostAddress:$port/")
+      logger.info(s"Server online at http://hostAddress:port/")
     case Failure(e) =>
-      logger.error(e, s"Failed to open akak-http on http://$hostAddress:$port/")
+      logger.error(e, s"Failed to open akak-http on http://hostAddress:port/")
       system.terminate()
   }
   // restServer.startServer(host, port)

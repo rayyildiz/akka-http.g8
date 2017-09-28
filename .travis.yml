@@ -1,14 +1,6 @@
 language: scala
-sudo: false
 jdk: oraclejdk8
-env:
-  matrix:
-    - SCRIPT="sbt new file://$(pwd) --name=hello && cd hello && sbt test"
-    - SCRIPT="sbt new file://$(pwd) --name=smello --organization=org.eggsample && cd smello && sbt test"
-script: eval $SCRIPT
-cache:
-  directories:
-    - $HOME/.ivy2/cache
-    - $HOME/.sbt/boot/scala*
-before_cache:
-  - find $HOME/.ivy2/cache -name "ivydata-*.properties" | xargs rm
+scala:
+  - $scala_version$
+script:
+  - "sbt clean compile test"

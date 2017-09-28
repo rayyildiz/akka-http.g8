@@ -7,8 +7,8 @@ import sbtassembly.PathList
 object Settings {
   lazy val settings = Seq(
     organization    := "$organization;format="norm"$",
-    version         := "$version;format="norm"$",
-    scalaVersion    := "$scala_version;format="norm"$"
+    version         := "$version$",
+    scalaVersion    := "$scala_version$",
     publishMavenStyle := true,
     publishArtifact in Test := false,
     assemblyMergeStrategy in assembly := {
@@ -28,11 +28,11 @@ object Settings {
     publishArtifact in Test := false,
     publishMavenStyle := true,
     licenses := Seq("Apache-2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0.txt")),
-    homepage := Some(url("https://github.com/$github_user;format="norm"$/$name;format="norm"$")),
+    homepage := Some(url("https://github.com/$github_user;format="norm"$/$name;format="lower,hyphen"$")),
     scmInfo := Some(
       ScmInfo(
-        url("http://github.com/$github_user;format="norm"$/$name;format="norm"$"),
-        "scm:git:git@github.com:$github_user;format="norm"$/$name;format="norm"$.git"
+        url("http://github.com/$github_user;format="norm"$/$name;format="lower,hyphen"$"),
+        "scm:git:git@github.com:$github_user;format="norm"$/$name;format="lower,hyphen"$.git"
       )
     ),
     developers := List(
@@ -47,6 +47,6 @@ object Settings {
   )
 
   lazy val $name;format="norm,word"$Settings = Seq(
-    name := "$name;format="norm"$"
+    name := "$name;format="lower,hyphen"$"
   )
 }

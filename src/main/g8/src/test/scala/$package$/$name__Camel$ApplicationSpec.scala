@@ -13,7 +13,7 @@ import org.scalatest.{BeforeAndAfterAll, FlatSpec, Matchers}
 import scala.concurrent.Await
 import scala.concurrent.duration.Duration
 
-class $name__Camel$ApplicationSpec
+class $name;format="Camel"$ApplicationSpec
   extends FlatSpec
     with ScalaFutures
     with BeforeAndAfterAll
@@ -21,11 +21,11 @@ class $name__Camel$ApplicationSpec
     with JsonSerialization {
   BootApplication.main(Array())
 
-  implicit val system = $name__Camel$Application.system
+  implicit val system = $name;format="Camel"$Application.system
 
   import system.dispatcher
 
-  implicit val materializer = $name__Camel$Application.materializer
+  implicit val materializer = $name;format="Camel"$Application.materializer
   // scalastyle:off magic.number
   implicit val defaultPatience = PatienceConfig(timeout = Span(10, Seconds), interval = Span(1000, Millis))
   // scalastyle:on magic.number
@@ -36,7 +36,7 @@ class $name__Camel$ApplicationSpec
     Source
       .single(request)
       .via(
-        Http().outgoingConnection(host = $name__Camel$Application.hostAddress, port = $name__Camel$Application.port)
+        Http().outgoingConnection(host = $name;format="Camel"$Application.hostAddress, port = $name;format="Camel"$Application.port)
       )
       .runWith(Sink.head)
 
