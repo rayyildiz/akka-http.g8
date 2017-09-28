@@ -1,0 +1,6 @@
+language: scala
+jdk: oraclejdk8
+scala:
+  - $scala_version$
+script:
+  - "sbt clean compile test"
