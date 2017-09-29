@@ -23,7 +23,7 @@ class RestRoutes @Inject()(
       path("test") {
         post {
           entity(as[TextRequest]) { entity =>
-            complete(testController.clean(entity.text))
+            complete(testController.action(entity))
           }
         }
       }

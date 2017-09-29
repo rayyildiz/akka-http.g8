@@ -9,7 +9,7 @@ import scala.concurrent.ExecutionContext
 @Singleton
 class MiddlewareController @Inject()()(implicit val executionContext: ExecutionContext) {
 
-  def health: ApplicationStatus = ApplicationStatus(status = true, name = "$name;format="norm,word"$")
+  def health: ApplicationStatus = ApplicationStatus(status = true, name = "$name;format="normalize"$")
 
   def info: ApplicationInformation = ApplicationInformation(version = "$version$", name = "$name;format="normalize"$")
 

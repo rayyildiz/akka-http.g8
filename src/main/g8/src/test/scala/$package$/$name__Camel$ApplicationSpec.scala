@@ -52,4 +52,37 @@ class $name;format="Camel"$ApplicationSpec
     }
   }
 
+  it should "return 404 on GET /NotDefinedRoute" in {
+    val responseFuture = sendRequest(HttpRequest(uri = "/NotDefinedRoute", method = HttpMethods.GET))
+    whenReady(responseFuture) { response =>
+      response.status shouldBe StatusCodes.OK
+
+      val errorMessageFuture = Unmarshal(response.entity).to[ErrorMessage]
+      whenReady(errorMessageFuture) { errorMessage =>
+        errorMessage.statusCode shouldBe StatusCodes.NotFound.intValue
+      }
+    }
+  }
+
+  it should "return UP on GET /health" in {
+    val responseFuture = sendRequest(HttpRequest(uri = "/health", method = HttpMethods.GET))
+    whenReady(responseFuture) { response =>
+      val applicationStatusResponseFuture = Unmarshal(response.entity).to[ApplicationStatus]
+      whenReady(applicationStatusResponseFuture) { applicationStatus =>
+        applicationStatus.status shouldBe true
+      }
+    }
+  }
+
+  it should "return information on GET /info" in {
+    val responseFuture = sendRequest(HttpRequest(uri = "/info", method = HttpMethods.GET))
+    whenReady(responseFuture) { response =>
+      val applicationInfoResponseFuture = Unmarshal(response.entity).to[ApplicationInformation]
+      whenReady(applicationInfoResponseFuture) { applicationInfo =>
+        applicationInfo.version shouldBe "$version$"
+        applicationInfo.name shouldBe "$name;format="normalize"$"
+      }
+    }
+  }
+
 }

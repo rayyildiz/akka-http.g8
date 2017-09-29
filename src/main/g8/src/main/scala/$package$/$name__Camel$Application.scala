@@ -7,19 +7,23 @@ import akka.http.scaladsl.server.Route
 import akka.stream.ActorMaterializer
 import com.google.inject.Guice
 import $package$.modules.{AkkaModule, ConfigModule}
-
+import com.typesafe.config.Config
 import scala.concurrent.ExecutionContext
 import scala.util.{Failure, Success}
 
 
 object $name;format="Camel"$Application extends App {
-  val hostAddress = "localhost"
-  val port = 8080
 
   val injector = Guice.createInjector(
     new ConfigModule(),
     new AkkaModule()
   )
+
+  val config = injector.getInstance(classOf[Config])
+
+  val hostAddress = config.getString("app.http.host")
+  val port = config.getInt("app.http.port")
+
 
   implicit val system: ActorSystem = injector.getInstance(classOf[ActorSystem])
   implicit val executionContext: ExecutionContext = injector.getInstance(classOf[ExecutionContext])
@@ -37,11 +41,10 @@ object $name;format="Camel"$Application extends App {
 
   bindingFuture.onComplete {
     case Success(_) =>
-      logger.info(s"Server online at http://\$hostAddress:\$port/")
+      logger.info("Server online at http://{}:{}/", hostAddress,port)
     case Failure(e) =>
-      logger.error(e, s"Failed to open akak-http on http://\$hostAddress:\$port/")
+      logger.error(e, "Failed to open akka-http on http://{}}:{}}/", hostAddress, port)
       system.terminate()
   }
-  // restServer.startServer(host, port)
 
 }
