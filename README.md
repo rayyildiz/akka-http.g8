@@ -14,12 +14,11 @@ Project Supports
 ---
 
 - [Travis-CI](https://travis-ci.org/)
-- Akka Http
-- Akka Actor
-- Scalafmt
-- ScalaStyle
-- Dependencies Injection by [scala-guice](https://github.com/codingwell/scala-guice)
-- Logback
+- [Akka Http](https://doc.akka.io/docs/akka-http/current/scala/http/)
+- [Akka](https://akka.io/)
+- [Scalafmt](http://scalameta.org/scalafmt/) with [neo-sbt-scalafmt](https://github.com/lucidsoftware/neo-sbt-scalafmt)
+- [ScalaStyle](http://www.scalastyle.org/)
+- Dependency Injection with [scala-guice](https://github.com/codingwell/scala-guice)
 
 Template license
 ----------------
