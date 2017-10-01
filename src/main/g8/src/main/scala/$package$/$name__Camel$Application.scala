@@ -8,9 +8,9 @@ import akka.stream.ActorMaterializer
 import com.google.inject.Guice
 import $package$.modules.{AkkaModule, ConfigModule}
 import com.typesafe.config.Config
+
 import scala.concurrent.ExecutionContext
 import scala.util.{Failure, Success}
-
 
 object $name;format="Camel"$Application extends App {
 
@@ -43,7 +43,7 @@ object $name;format="Camel"$Application extends App {
     case Success(_) =>
       logger.info("Server online at http://{}:{}/", hostAddress,port)
     case Failure(e) =>
-      logger.error(e, "Failed to open akka-http on http://{}}:{}}/", hostAddress, port)
+      logger.error(e, "Failed to open akka-http on http://{}:{}/", hostAddress, port)
       system.terminate()
   }
 

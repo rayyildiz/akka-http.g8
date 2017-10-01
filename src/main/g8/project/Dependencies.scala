@@ -10,11 +10,11 @@ object Dependencies {
 
   lazy val library = new {
     val akkaActor   = "com.typesafe.akka" %% "akka-actor"   % version.akka
-    val akkaSlf4j   = "com.typesafe.akka" %% "akka-slf4j"   % version.akka    
+    val akkaSlf4j   = "com.typesafe.akka" %% "akka-slf4j"   % version.akka
     val akkaStream  = "com.typesafe.akka" %% "akka-stream"  % version.akka
 
-    val akkaHttp = "com.typesafe.akka" %% "akka-http"             % version.akkaHttp
-    val akkaJson = "com.typesafe.akka" %% "akka-http-spray-json"  % version.akkaHttp
+    val akkaHttp    = "com.typesafe.akka" %% "akka-http"             % version.akkaHttp
+    val akkaJson    = "com.typesafe.akka" %% "akka-http-spray-json"  % version.akkaHttp
 
     val scalaGuice      = "net.codingwell" %% "scala-guice"     % "4.1.0"
     val logbackClassic  = "ch.qos.logback" %  "logback-classic" % "1.2.3"
