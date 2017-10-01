@@ -16,7 +16,7 @@ Project Supports
 - [Travis-CI](https://travis-ci.org/)
 - [Akka Http](https://doc.akka.io/docs/akka-http/current/scala/http/)
 - [Akka](https://akka.io/)
-- [Scalafmt](http://scalameta.org/scalafmt/) with [neo-sbt-scalafmt](https://github.com/lucidsoftware/neo-sbt-scalafmt)
+- [Scalafmt](http://scalameta.org/scalafmt/)
 - [ScalaStyle](http://www.scalastyle.org/)
 - Dependency Injection with [scala-guice](https://github.com/codingwell/scala-guice)
 
