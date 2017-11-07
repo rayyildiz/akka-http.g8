@@ -16,3 +16,7 @@ script:
   # Tricks to avoid unnecessary cache updates
   - find $HOME/.sbt -name "*.lock" | xargs rm
   - find $HOME/.ivy2 -name "ivydata-*.properties" | xargs rm
+  
+notifications:
+  slack:
+    secure: GCc4bAZI2BVtTHsEUzYJsc8qWcjHzVaS2+Sie290mbO4yKscezlBaFgvgKMFapct3IPbrMXSKOM8zMJB8e2M44xXwu+k4C428Q1J5xu/y4IwXDQ69YgVjq5RlrAClg4Ty7rgdn9xjGgdTExAY+KAhsVriKkA8HOxXjRfA0xWLtfjSo2UkANdhNRa7sFSgLSo8EhAb9TVTRNe9kOSi2WqbIU3z/ZZ4hsLxaANDjSH005bkJ05IqTA3XAHrCG119/ELab1ngf7ZetcxlPhp0oqzjZFIS1rrQL8fFBgenT02EKJR7lKNiACM0PHRFnqyn4/CoOxSF+0703bTPJuLzeMjPwQT2mLIXM71uprG0GL2lBXKgQH+NJoCfhfhzf/XCH4C7Ibt6iA6ASFhQGG0xOxpTovCoYw2LvCJRZvFQRaCDNzSgKPZKe5VDzqL3uonuiqcOGrvVgDLde6a5KQU2IdEnjxJbBW/Yg3ITwsCNHSqfkXMU5d08ogK4F5co+kp4kIY/iKyV4pmdMlW7gbVtBJfX4J4b6P3Gl2sFzFZDcSjVSVAHMAJQwgJa6pF8Ebs/R/B68MYQQqDe7F/6fo+u6g1XY9Z3OxvgVbf9WpVO2FQhjL4dVpWxDYejqewR4Szg3szdn8olA9VYrWxsUX2+23eozwiU4INfmPF/x7hby7FMg=
