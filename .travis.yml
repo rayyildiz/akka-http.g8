@@ -1,22 +1,14 @@
 language: scala
-
-# These directories are cached to S3 at the end of the build
 cache:
   directories:
-    - $HOME/.ivy2/cache
-    - $HOME/.sbt/boot/
-
+  - "$HOME/.ivy2/cache"
+  - "$HOME/.sbt/boot/"
 jdk:
-  - oraclejdk8
-
+- oraclejdk8
 script:
-  ## This runs the template with the default parameters, and runs test within the templated app.
-  - sbt -Dfile.encoding=UTF8 -J-XX:ReservedCodeCacheSize=256M test
-
-  # Tricks to avoid unnecessary cache updates
-  - find $HOME/.sbt -name "*.lock" | xargs rm
-  - find $HOME/.ivy2 -name "ivydata-*.properties" | xargs rm
-  
+- sbt -Dfile.encoding=UTF8 -J-XX:ReservedCodeCacheSize=256M test
+- find $HOME/.sbt -name "*.lock" | xargs rm
+- find $HOME/.ivy2 -name "ivydata-*.properties" | xargs rm
 notifications:
   slack:
-    secure: GCc4bAZI2BVtTHsEUzYJsc8qWcjHzVaS2+Sie290mbO4yKscezlBaFgvgKMFapct3IPbrMXSKOM8zMJB8e2M44xXwu+k4C428Q1J5xu/y4IwXDQ69YgVjq5RlrAClg4Ty7rgdn9xjGgdTExAY+KAhsVriKkA8HOxXjRfA0xWLtfjSo2UkANdhNRa7sFSgLSo8EhAb9TVTRNe9kOSi2WqbIU3z/ZZ4hsLxaANDjSH005bkJ05IqTA3XAHrCG119/ELab1ngf7ZetcxlPhp0oqzjZFIS1rrQL8fFBgenT02EKJR7lKNiACM0PHRFnqyn4/CoOxSF+0703bTPJuLzeMjPwQT2mLIXM71uprG0GL2lBXKgQH+NJoCfhfhzf/XCH4C7Ibt6iA6ASFhQGG0xOxpTovCoYw2LvCJRZvFQRaCDNzSgKPZKe5VDzqL3uonuiqcOGrvVgDLde6a5KQU2IdEnjxJbBW/Yg3ITwsCNHSqfkXMU5d08ogK4F5co+kp4kIY/iKyV4pmdMlW7gbVtBJfX4J4b6P3Gl2sFzFZDcSjVSVAHMAJQwgJa6pF8Ebs/R/B68MYQQqDe7F/6fo+u6g1XY9Z3OxvgVbf9WpVO2FQhjL4dVpWxDYejqewR4Szg3szdn8olA9VYrWxsUX2+23eozwiU4INfmPF/x7hby7FMg=
+    secure: KX0kilBnpXfUz9lUY5jQd1DNzQEQmF61zd1yloKpmZqLJrSfXj8RhCQ6uwLJgk16IsFxttth5AK4ztzJIyUx9TBZrO8KLGFub8z65L2K1T9KU5H0croqFawF/IfWiXBdKCeoONckuno7ypvgSYosYj9PxIsI3x8BCQaD69C4AKdW7E+PpLWbyPESZi+VDM8R9ixEJkKWxE6x9eOZmaisfQH5mfp7l1ThhVgZ0/M01xOvUJmmy/hVaPzWnc1hnE6nzc3HzKBa6MHPlVa1HvAC5p/67YfyGlwBBNABHsdmm6tIn2s4w5jF0H2FBVGbGe7Ox+aBcnrUnOCjUiU+YqIg7Iw3slRZZsumcLIQyAre6jKCV6j1uCwJGl+NJqSjF2IG0p/kp41kRtlPVcMmLQJuAGtPrqZqB8yxYJ/8bApQ1z15nSPvcbJM09KeugckeUUVACz3OXaMxhSTqrnU4jmNRXdytme9SF3/M/+tSg2WcNjC7jTPspsXCi3fyStN/mQf52MojQaobkIBPxeGxQ4EgMfLYrE55lKMdQn0UiTmyPOzyaOTxa5vcIpRcH8zy0bELYC3WNW22ukeKjYIxzm6vR+cpbGJO1XRbNax3wlz2F09vLaqOzNBEfr+5VpyIsrMFh3zk7fl7qzxu/yB/QYgThwG5FTE7i0+cj/K9CkP10k=
