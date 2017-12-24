@@ -10,5 +10,6 @@ script:
 - find $HOME/.sbt -name "*.lock" | xargs rm
 - find $HOME/.ivy2 -name "ivydata-*.properties" | xargs rm
 notifications:
+  email: false
   slack:
     secure: KX0kilBnpXfUz9lUY5jQd1DNzQEQmF61zd1yloKpmZqLJrSfXj8RhCQ6uwLJgk16IsFxttth5AK4ztzJIyUx9TBZrO8KLGFub8z65L2K1T9KU5H0croqFawF/IfWiXBdKCeoONckuno7ypvgSYosYj9PxIsI3x8BCQaD69C4AKdW7E+PpLWbyPESZi+VDM8R9ixEJkKWxE6x9eOZmaisfQH5mfp7l1ThhVgZ0/M01xOvUJmmy/hVaPzWnc1hnE6nzc3HzKBa6MHPlVa1HvAC5p/67YfyGlwBBNABHsdmm6tIn2s4w5jF0H2FBVGbGe7Ox+aBcnrUnOCjUiU+YqIg7Iw3slRZZsumcLIQyAre6jKCV6j1uCwJGl+NJqSjF2IG0p/kp41kRtlPVcMmLQJuAGtPrqZqB8yxYJ/8bApQ1z15nSPvcbJM09KeugckeUUVACz3OXaMxhSTqrnU4jmNRXdytme9SF3/M/+tSg2WcNjC7jTPspsXCi3fyStN/mQf52MojQaobkIBPxeGxQ4EgMfLYrE55lKMdQn0UiTmyPOzyaOTxa5vcIpRcH8zy0bELYC3WNW22ukeKjYIxzm6vR+cpbGJO1XRbNax3wlz2F09vLaqOzNBEfr+5VpyIsrMFh3zk7fl7qzxu/yB/QYgThwG5FTE7i0+cj/K9CkP10k=
