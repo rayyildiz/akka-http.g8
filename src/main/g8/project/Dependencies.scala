@@ -3,7 +3,7 @@ import sbt._
 object Dependencies {
 
   lazy val version = new {
-    val scalaTest = "3.0.4"
+    val scalaTest = "3.0.5"
     val akka      = "$akka_version;format="norm"$"
     val akkaHttp  = "$akka_http_version;format="norm"$"
   }

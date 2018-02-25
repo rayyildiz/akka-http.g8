@@ -13,7 +13,7 @@ Create easily akka-http project.
 Project Supports
 ---
 
-- [Travis-CI](https://travis-ci.org/)
+- [Travis-CI](https://docs.travis-ci.com/user/languages/scala/)
 - [Akka Http](https://doc.akka.io/docs/akka-http/current/scala/http/)
 - [Akka](https://akka.io/)
 - [Scalafmt](http://scalameta.org/scalafmt/)

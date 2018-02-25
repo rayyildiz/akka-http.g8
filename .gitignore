@@ -12,3 +12,5 @@ bin
 .settings
 logs
 .idea
+*.iml
+*.log
