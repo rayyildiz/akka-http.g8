@@ -3,6 +3,12 @@
 [![Build Status](http://img.shields.io/travis/$github_user$/$name;format="lower,hyphen"$.svg?style=flat-square)](https://travis-ci.org/$github_user$/$name;format="lower,hyphen"$)
 
 
+Running
+===
+
+Create docker image : ```sbt docker``` and run docker container: ```docker run -p 8080:8080 -d $organization;format="norm"$/$name;format="lower,hyphen"$```
+
+
 Usage
 ===
 
