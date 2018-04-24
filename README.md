@@ -13,12 +13,13 @@ Create easily akka-http project.
 Project Supports
 ---
 
-- [Travis-CI](https://travis-ci.org/)
 - [Akka Http](https://doc.akka.io/docs/akka-http/current/scala/http/)
 - [Akka](https://akka.io/)
+- Dependency Injection with [scala-guice](https://github.com/codingwell/scala-guice)
 - [Scalafmt](http://scalameta.org/scalafmt/)
 - [ScalaStyle](http://www.scalastyle.org/)
-- Dependency Injection with [scala-guice](https://github.com/codingwell/scala-guice)
+- [Travis-CI](https://docs.travis-ci.com/user/languages/scala/)
+- [Docker](https://www.docker.com/)
 
 Template license
 ----------------

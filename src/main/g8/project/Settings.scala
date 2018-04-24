@@ -3,6 +3,8 @@ import sbt._
 import sbtassembly.AssemblyKeys._
 import sbtassembly.AssemblyPlugin.autoImport.{MergeStrategy, assemblyMergeStrategy}
 import sbtassembly.PathList
+import sbtdocker.DockerPlugin.autoImport._
+import sbtdocker.Dockerfile
 
 object Settings {
   lazy val settings = Seq(
@@ -35,6 +37,21 @@ object Settings {
         "scm:git:git@github.com:$github_user;format="norm"$/$name;format="lower,hyphen"$.git"
       )
     )
+  )
+
+  lazy val dockerSettings = Seq(
+    dockerfile in docker := {
+      val artifact: File = assembly.value
+      val artifactTargetPath = s"/app/\${artifact.name}"
+
+      new Dockerfile {
+        from("openjdk:8-jre-alpine")
+        add(artifact, artifactTargetPath, chown = "daemon:daemon")
+        label("maintainer", "$github_user;format="norm"$")
+        expose(8080)
+        entryPoint("java", "-jar", artifactTargetPath)
+      }
+    }
   )
 
   lazy val testSettings = Seq(
