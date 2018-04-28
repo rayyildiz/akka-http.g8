@@ -31,7 +31,6 @@ matrix:
     - env: JDK='Oracle JDK 11'
 
 script:
-  - javac --version
   - sbt -Dfile.encoding=UTF8 -J-XX:ReservedCodeCacheSize=256M test
   - find $HOME/.sbt -name "*.lock" | xargs rm
   - find $HOME/.ivy2 -name "ivydata-*.properties" | xargs rm
