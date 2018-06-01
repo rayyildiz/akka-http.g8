@@ -17,7 +17,7 @@ matrix:
     - env: JDK='OpenJDK 10' JACOCO='-PenableJaCoCo'
       install: . ./install-jdk.sh -F 10 -L GPL
 
-    # Java 8  Openjdk/Orclejdk
+    # Java 8 OracleJDK/OpenJDK
     - env:
         jdk: oraclejdk8
     - env:

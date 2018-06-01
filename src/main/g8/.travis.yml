@@ -1,8 +1,13 @@
 language: scala
 
+cache:
+  directories:
+  - "\$HOME/.ivy2/cache"
+  - "\$HOME/.sbt/boot/"
+  
 # Get latest install-jdk.sh script
 before_install:
-  - wget https://github.com/sormuras/bach/raw/master/install-jdk.sh
+  - wget -q https://github.com/sormuras/bach/raw/master/install-jdk.sh
 
 matrix:
   include:
@@ -13,7 +18,7 @@ matrix:
     - env: JDK='OpenJDK 10' JACOCO='-PenableJaCoCo'
       install: . ./install-jdk.sh -F 10 -L GPL
 
-    # Java 8  Openjdk/Orclejdk
+    # Java 8 OracleJDK/OpenJDK
     - env:
         jdk: oraclejdk8
     - env:
@@ -28,5 +33,11 @@ matrix:
 
 scala:
   - $scala_version$
+  
 script:
   - "sbt clean compile test"
+  - find \$HOME/.sbt -name "*.lock" | xargs rm
+  - find \$HOME/.ivy2 -name "ivydata-*.properties" | xargs rm
+
+ notifications:
+  email: true
