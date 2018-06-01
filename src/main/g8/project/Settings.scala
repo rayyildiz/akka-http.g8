@@ -22,14 +22,15 @@ object Settings {
 
   lazy val publishSettings = Seq(
     publishTo := Some(
-      if (isSnapshot.value)
+      if (isSnapshot.value) {
         Opts.resolver.sonatypeSnapshots
-      else
+      } else {
         Opts.resolver.sonatypeStaging
+      }
     ),
     publishArtifact in Test := false,
     publishMavenStyle := true,
-    licenses := Seq("Apache-2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0.txt")),
+    licenses := Seq("MIT" -> url("https://opensource.org/licenses/MIT")),
     homepage := Some(url("https://github.com/$github_user;format="norm"$/$name;format="lower,hyphen"$")),
     scmInfo := Some(
       ScmInfo(
@@ -51,7 +52,10 @@ object Settings {
         expose(8080)
         entryPoint("java", "-jar", artifactTargetPath)
       }
-    }
+    }, 
+	imageNames in docker := Seq(
+      ImageName(s"$github_user;format="norm"$/\${name.value}:latest")
+    )
   )
 
   lazy val testSettings = Seq(

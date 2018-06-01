@@ -4,13 +4,13 @@ Akka Http template
 [![Build Status](https://travis-ci.org/rayyildiz/akka-http.g8.svg?branch=master)](https://travis-ci.org/rayyildiz/akka-http.g8)
 
 
-Create easily akka-http project.
+Create akka-http project easily with these features:
 
 ```scala
-  sbt new https://github.com/rayyildiz/akka-http.g8
+sbt new rayyildiz/akka-http.g8
 ```
 
-Project Supports
+Template Supports:
 ---
 
 - [Akka Http](https://doc.akka.io/docs/akka-http/current/scala/http/)
@@ -20,6 +20,7 @@ Project Supports
 - [ScalaStyle](http://www.scalastyle.org/)
 - [Travis-CI](https://docs.travis-ci.com/user/languages/scala/)
 - [Docker](https://www.docker.com/)
+
 
 Template license
 ----------------
