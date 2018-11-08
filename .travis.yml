@@ -28,6 +28,7 @@ matrix:
       install: . ./install-jdk.sh -F 11 -L BCL
     # The following environments are known to fail
   allow_failures:
+    - env: JDK='Oracle JDK 10'
     - env: JDK='Oracle JDK 11'
 
 script:
