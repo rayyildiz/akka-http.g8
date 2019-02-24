@@ -16,7 +16,7 @@ object Dependencies {
     val akkaHttp    = "com.typesafe.akka" %% "akka-http"             % version.akkaHttp
     val akkaJson    = "com.typesafe.akka" %% "akka-http-spray-json"  % version.akkaHttp
 
-    val scalaGuice      = "net.codingwell" %% "scala-guice"     % "4.2.1"
+    val scalaGuice      = "net.codingwell" %% "scala-guice"     % "4.2.2"
     val logbackClassic  = "ch.qos.logback" %  "logback-classic" % "1.2.3"
 
     val akkaTestKit     = "com.typesafe.akka" %% "akka-testkit"       % version.akka      % Test
