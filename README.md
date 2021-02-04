@@ -1,7 +1,7 @@
 Akka Http template
 ===
 
-[![Build Status](https://travis-ci.org/rayyildiz/akka-http.g8.svg?branch=master)](https://travis-ci.org/rayyildiz/akka-http.g8)
+![build](https://github.com/rayyildiz/akka-http.g8/workflows/build/badge.svg)
 
 
 Create akka-http project easily with these features:
